@@ -1,0 +1,204 @@
+---
+// LeadForm.astro
+
+// Die ACTION_URL muss in Brevo unter "Formulare" -> "Teilen" (als HTML/Iframe) generiert werden.
+// Sie sieht in etwa so aus: https://[hash].sibforms.com/serve/...
+const ACTION_URL = "HIER_URL_EINTRAGEN";
+---
+
+<div class="bg-white border-2 border-blue-bayoux-200 rounded-2xl p-6 md:p-10 my-10 shadow-lg relative overflow-hidden" id="erstberatung">
+  <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-bayoux-300 via-blue-bayoux-500 to-blue-bayoux-700"></div>
+  
+  <div class="text-center mb-8">
+    <div class="inline-flex items-center text-sm font-bold text-green-700 bg-green-100 px-4 py-1.5 rounded-full mb-4 shadow-sm">
+      <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      Mein persönlicher Bonus für dich: 200 € Cashback
+    </div>
+    <h3 class="text-3xl font-extrabold text-blue-bayoux-900 mb-3 tracking-tight">Gratis Erstgespräch bei KNIEATHLETICS anfragen</h3>
+    <p class="text-gray-600 max-w-lg mx-auto leading-relaxed mb-4">Warum mache ich das?</p>
+    <p class="text-gray-600 max-w-lg mx-auto leading-relaxed mb-4">Weil ich selbst weiß, wie es ist, nach einer Knieverletzung vor einer großen Ausgabe zu stehen. Als Affiliate erhalte ich eine Provision – einen Teil davon gebe ich direkt an dich weiter.</p>
+    <p class="text-gray-600 max-w-lg mx-auto leading-relaxed mb-4">Einfach, fair, transparent.</p>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="max-w-2xl mx-auto mb-8">
+    <div class="flex justify-between items-center mb-2">
+      <span class="text-xs font-semibold text-blue-bayoux-600 uppercase tracking-wider" id="step-text">Schritt 1 von 2</span>
+      <span class="text-xs font-semibold text-gray-500" id="step-percent">50%</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+      <div class="bg-blue-bayoux-600 h-2.5 rounded-full transition-all duration-500 ease-out" id="progress-bar" style="width: 50%"></div>
+    </div>
+  </div>
+
+  <form 
+    action={ACTION_URL} 
+    method="POST" 
+    class="space-y-6 max-w-2xl mx-auto relative min-h-[300px]"
+    onsubmit="if(typeof gtag !== 'undefined') { gtag('event', 'lead_submitted'); }"
+    id="lead-form"
+  >
+    <!-- STEP 1 -->
+    <div id="step-1" class="space-y-6 animate-fade-in absolute w-full top-0 left-0">
+      <div class="space-y-3">
+        <label for="VERLETZUNG" class="block text-lg font-bold text-blue-bayoux-900 text-center mb-6">Mit welcher Verletzung hast du zu kämpfen? *</label>
+        <div class="relative max-w-lg mx-auto">
+          <select id="VERLETZUNG" name="VERLETZUNG" required class="w-full px-5 py-4 rounded-xl border-2 border-gray-200 focus:border-blue-bayoux-500 focus:ring-4 focus:ring-blue-bayoux-100 transition-all bg-gray-50 text-lg outline-none appearance-none cursor-pointer hover:bg-white text-gray-700 font-medium shadow-sm">
+            <option value="" disabled selected>Bitte wählen...</option>
+            <option value="Meniskusriss">Meniskusriss</option>
+            <option value="Kreuzbandriss">Kreuzbandriss</option>
+            <option value="Knieschmerzen_allgemein">Chronische Knieschmerzen</option>
+            <option value="Sonstiges">Anderes / Sonstiges</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-5 text-blue-bayoux-600">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-8 max-w-lg mx-auto">
+        <button 
+          type="button" 
+          id="btn-next"
+          class="w-full bg-blue-bayoux-600 hover:bg-blue-bayoux-700 text-white font-bold py-4 px-8 rounded-xl shadow-md transition duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-2"
+        >
+          <span class="text-lg">Weiter zur Auswahl</span> 
+          <span class="font-normal text-xl">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="step-2" class="space-y-6 hidden absolute w-full top-0 left-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <label for="VORNAME" class="block text-sm font-semibold text-blue-bayoux-800">Vorname *</label>
+          <input type="text" id="VORNAME" name="VORNAME" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-bayoux-500 focus:ring-2 focus:ring-blue-bayoux-200 transition-colors bg-gray-50 outline-none" placeholder="Max" disabled />
+        </div>
+        <div class="space-y-2">
+          <label for="NACHNAME" class="block text-sm font-semibold text-blue-bayoux-800">Nachname</label>
+          <input type="text" id="NACHNAME" name="NACHNAME" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-bayoux-500 focus:ring-2 focus:ring-blue-bayoux-200 transition-colors bg-gray-50 outline-none" placeholder="Mustermann (optional)" disabled />
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <label for="EMAIL" class="block text-sm font-semibold text-blue-bayoux-800">E-Mail Adresse *</label>
+        <input type="email" id="EMAIL" name="EMAIL" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-bayoux-500 focus:ring-2 focus:ring-blue-bayoux-200 transition-colors bg-gray-50 outline-none" placeholder="max@beispiel.de" disabled />
+      </div>
+
+      <div class="bg-blue-bayoux-50 p-4 rounded-lg mt-6 border border-blue-bayoux-100">
+        <label class="flex items-start gap-3 cursor-pointer">
+          <input type="checkbox" name="DSGVO" required class="mt-1 w-5 h-5 text-blue-bayoux-600 rounded border-gray-300 focus:ring-blue-bayoux-500" disabled />
+          <span class="text-xs text-gray-700 leading-snug">
+            * Ich stimme zu, dass meine Daten zum Zweck der Terminvereinbarung und Erstberatung an KNIEATHLETICS (MJS Sports GmbH) weitergeleitet werden. Diese Einwilligung ist freiwillig und kann jederzeit widerrufen werden. Weitere Informationen findest du in der <a href="#" class="text-blue-bayoux-600 underline">Datenschutzerklärung</a>.
+          </span>
+        </label>
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row gap-4">
+        <button 
+          type="button" 
+          id="btn-back"
+          class="px-6 py-4 rounded-xl text-blue-bayoux-600 font-semibold border-2 border-transparent hover:bg-blue-bayoux-50 transition-colors order-2 md:order-1"
+        >
+          Zurück
+        </button>
+        <button 
+          type="submit" 
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-xl shadow-md transition duration-300 transform hover:-translate-y-1 hover:shadow-lg flex flex-col items-center justify-center gap-1 order-1 md:order-2"
+        >
+          <span class="text-lg leading-tight">Jetzt kostenlos anfragen + 200 € sichern</span> 
+        </button>
+      </div>
+      
+      <p class="text-center text-xs text-gray-500 mt-4 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+        Kein Spam. Keine Kosten. Jederzeit abmeldbar.
+      </p>
+    </div>
+  </form>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const step1 = document.getElementById("step-1");
+    const step2 = document.getElementById("step-2");
+    const btnNext = document.getElementById("btn-next");
+    const btnBack = document.getElementById("btn-back");
+    const verletzungSelect = document.getElementById("VERLETZUNG");
+    const progressBar = document.getElementById("progress-bar");
+    const stepText = document.getElementById("step-text");
+    const stepPercent = document.getElementById("step-percent");
+    const formContainer = document.getElementById("lead-form");
+    
+    if(!step1 || !step2) return;
+
+    const step2Inputs = step2.querySelectorAll("input, select, textarea, button");
+
+    btnNext.addEventListener("click", () => {
+      // Validate step 1
+      if (!verletzungSelect.value) {
+        verletzungSelect.classList.add("border-red-500", "ring-red-200");
+        return;
+      }
+      verletzungSelect.classList.remove("border-red-500", "ring-red-200");
+      
+      // Transition to step 2
+      step1.classList.add("hidden");
+      step1.classList.remove("animate-fade-in");
+      step2.classList.remove("hidden");
+      step2.classList.add("animate-fade-in");
+      
+      // Update form height for position absolute childs
+      formContainer.style.minHeight = step2.scrollHeight + "px";
+      
+      // Enable step 2 inputs
+      step2Inputs.forEach(el => el.removeAttribute("disabled"));
+      
+      // Update progress
+      progressBar.style.width = "100%";
+      stepText.textContent = "Schritt 2 von 2";
+      stepPercent.textContent = "100%";
+    });
+
+    btnBack.addEventListener("click", () => {
+      // Transition to step 1
+      step2.classList.add("hidden");
+      step2.classList.remove("animate-fade-in");
+      step1.classList.remove("hidden");
+      step1.classList.add("animate-fade-in");
+      
+      // Update form height
+      formContainer.style.minHeight = step1.scrollHeight + "px";
+      
+      // Disable step 2 inputs 
+      step2Inputs.forEach(el => el.setAttribute("disabled", "disabled"));
+      btnBack.removeAttribute("disabled"); 
+      
+      // Update progress
+      progressBar.style.width = "50%";
+      stepText.textContent = "Schritt 1 von 2";
+      stepPercent.textContent = "50%";
+    });
+    
+    // Clear validation error on change
+    verletzungSelect.addEventListener("change", () => {
+      if(verletzungSelect.value) {
+        verletzungSelect.classList.remove("border-red-500", "ring-red-200");
+      }
+    });
+    
+    // Initial height setup
+    formContainer.style.minHeight = step1.scrollHeight + "px";
+  });
+</script>
+
+<style>
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</div>

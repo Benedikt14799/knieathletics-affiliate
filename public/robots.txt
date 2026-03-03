@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://benediktfau.de/sitemap-index.xml

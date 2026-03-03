@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href: string;
+  text: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  class?: string;
+}
+const { href, text, variant = 'primary', class: className = '' } = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center font-bold py-3.5 px-8 rounded-lg transition duration-300 transform hover:-translate-y-1 text-center";
+const primaryStyles = "bg-blue-bayoux-600 hover:bg-blue-bayoux-700 text-white shadow-md hover:shadow-lg";
+const secondaryStyles = "bg-blue-bayoux-800 hover:bg-blue-bayoux-950 text-white shadow-md hover:shadow-lg";
+const outlineStyles = "bg-white text-blue-bayoux-700 border-2 border-blue-bayoux-300 hover:border-blue-bayoux-500 hover:bg-blue-bayoux-50 shadow-sm hover:shadow-md";
+
+let variantStyles = primaryStyles;
+if (variant === 'secondary') variantStyles = secondaryStyles;
+if (variant === 'outline') variantStyles = outlineStyles;
+
+const finalStyles = `${baseStyles} ${variantStyles} ${className}`;
+---
+<a href={href} class={finalStyles}>
+  {text} <span class="ml-2">→</span>
+</a>

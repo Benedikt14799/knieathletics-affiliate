@@ -1,0 +1,67 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  schemaType?: string;
+  schemaData?: any;
+}
+const { title, description, canonical, schemaType, schemaData } = Astro.props;
+---
+<!doctype html>
+<html lang="de" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {schemaData && (
+      <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+    )}
+
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=DEINE_GA4_ID"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'DEINE_GA4_ID');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script is:inline>
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "DEINE_CLARITY_ID");
+    </script>
+  </head>
+  <body class="bg-blue-bayoux-50 text-blue-bayoux-950 font-sans flex flex-col min-h-screen">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <a href="/knieathletics/" class="font-bold text-xl text-blue-bayoux-800 tracking-tight">KNIEATHLETICS<span class="text-blue-bayoux-500 font-normal"> Erfahrungen</span></a>
+        <nav class="flex gap-4 sm:gap-6 text-sm font-medium">
+          <a href="/knieathletics/erfahrungsbericht" class="hover:text-blue-bayoux-500 transition-colors">Testbericht</a>
+          <a href="/knieathletics/faq" class="hover:text-blue-bayoux-500 transition-colors">FAQ</a>
+          <a href="/knieathletics/ueber-mich" class="hover:text-blue-bayoux-500 transition-colors">Über Mich</a>
+        </nav>
+      </div>
+    </header>
+    <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-8">
+      <slot />
+    </main>
+    <footer class="bg-blue-bayoux-900 text-blue-bayoux-200 py-8 mt-12 text-sm">
+      <div class="max-w-4xl mx-auto px-4">
+        <p class="mb-4 text-xs sm:text-sm leading-relaxed text-blue-bayoux-300"><strong>Transparenzhinweis:</strong> Diese Seite enthält Affiliate-Links. Wenn du über meine Empfehlung buchst, erhalte ich eine Provision. Den 200 € Cashback zahle ich aus dieser Provision. Für dich entstehen keine Zusatzkosten. (§ 5a UWG)</p>
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4 border-t border-blue-bayoux-800">
+          <p>&copy; {new Date().getFullYear()} Benedikt Faude</p>
+          <div class="flex gap-4">
+            <a href="/" class="hover:text-white transition-colors">Zurück zu benediktfau.de</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

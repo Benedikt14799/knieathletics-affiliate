@@ -1,0 +1,54 @@
+---
+import AffiliateLayout from '../../layouts/AffiliateLayout.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import CTAButton from '../../components/CTAButton.astro';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Benedikt Faude",
+  "jobTitle": "Sportenthusiast",
+  "url": "https://benediktfau.de"
+};
+---
+
+<AffiliateLayout 
+  title="Über Benedikt Faude | Knie-Reha Erfahrung & KNIEATHLETICS" 
+  description="Wer steckt hinter dieser Seite? Benedikts Geschichte – von der Knieverletzung zurück in den Sport. + 200 € Bonus."
+  canonical="https://benediktfau.de/knieathletics/ueber-mich/"
+  schemaType="Person"
+  schemaData={schemaData}
+>
+  <div class="mb-12 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">Hallo, ich bin Benedikt Faude</h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Warum ich diesen Blog gestartet habe und wer eigentlich dahinter steckt.</p>
+  </div>
+
+  <AuthorBox />
+
+  <article class="prose prose-blue prose-lg max-w-none text-gray-700 bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100 mt-8">
+    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-0 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Meine Verletzung & der Weg zur online Knie-Reha</h2>
+    <p>Das Internet ist leider voll von Nischenseiten, die Produkte oder Therapien empfehlen, ohne sich je ernsthaft damit auseinandergesetzt zu haben. Diese Seite hier ist anders. Ich bin Benedikt, und ich habe mir beim Sport den Meniskus gerissen.</p>
+    
+    <p>Auf der Suche nach einer vernünftigen Lösung für meine Rehabilitation fühlte ich mich in der normalen Praxis-Physio oft alleingelassen. Zweimal 20 Minuten die Woche reichten einfach nicht, und ich war unsicher, welche Übungen zu Hause sicher sind.</p>
+    
+    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-10 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Warum ich diese Seite betreibe</h2>
+    <p>Als ich schließlich das strukturierte, digitale Reha-Programm von KNIEATHLETICS durchlief und merkte, wie sehr mir das Produkt tatsächlich in meiner aktiven Genesung half, beschloss ich, diese Subpage hier auf meiner persönlichen Domain einzurichten. Echte Einblicke statt Marketing-Sprech.</p>
+    
+    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-10 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Transparenz: Das ist mein Affiliate-Modell</h2>
+    <p>Ja, diese Seite finanziert sich über ein Affiliate-Modell. Das bedeutet konkret: Wenn du über mein Formular ein gratis Erstgespräch bei KNIEATHLETICS anfragst und das KNIEATHLETICS Programm später buchst, erhalte ich als Affiliate eine Provision vom Unternehmen. <strong>Aber:</strong> Der Preis für das ca. 1.300€ teure Programm bleibt für dich exakt gleich.</p>
+    
+    <p class="font-bold text-blue-bayoux-900 mb-2">Mein 200 € Cashback-Angebot:</p>
+    <p>Da ich weiß, wie teuer so eine Reha sein kann, habe ich mich entschlossen, 200 € aus meiner Provision direkt an dich weiterzugeben. Du forderst die Beratung über diese Seite an, und wenn du das Programm buchst, überweise ich dir die 200 € als Bonus. Ich empfehle das Programm ausschließlich, weil ich es monatelang in der Reha selbst genutzt habe und zu 100% davon überzeugt bin.</p>
+    
+    <div class="bg-gray-50 border border-gray-100 p-8 rounded-2xl mt-12 flex flex-col items-center text-center">
+      <h4 class="text-xl font-bold text-blue-bayoux-900 mb-3">Du hast Fragen zu meiner Erfahrung?</h4>
+      <p class="text-base text-gray-600 mb-6 max-w-lg">Vielleicht habe ich sie bereits beantwortet. Wirf doch mal einen Blick in meinen FAQ-Bereich, dort greife ich die häufigsten Themen auf.</p>
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mt-2">
+        <CTAButton href="/knieathletics/" text="Jetzt Gratis Erstgespräch bei KNIEATHLETICS anfragen + 200 € sichern" class="w-full sm:w-auto text-left sm:text-center leading-snug" />
+        <CTAButton href="/knieathletics/faq" text="Zum Ratgeber / FAQ" variant="outline" class="w-full sm:w-auto whitespace-nowrap" />
+      </div>
+    </div>
+  </article>
+
+</AffiliateLayout>
