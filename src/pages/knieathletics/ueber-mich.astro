@@ -1,54 +1,137 @@
 ---
 import AffiliateLayout from '../../layouts/AffiliateLayout.astro';
-import AuthorBox from '../../components/AuthorBox.astro';
 import CTAButton from '../../components/CTAButton.astro';
 
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Benedikt Faude",
-  "jobTitle": "Sportenthusiast",
-  "url": "https://benediktfau.de"
+  "url": "https://benediktfau.de",
+  "image": "/benedikt-portrait.jpg",
+  "description": "Meniskusriss-Patient und Erfahrungsbericht-Autor. Ich berichte ehrlich über meine Reha mit KNIEATHLETICS – als Betroffener, nicht als Mediziner."
 };
 ---
 
 <AffiliateLayout 
-  title="Über Benedikt Faude | Knie-Reha Erfahrung & KNIEATHLETICS" 
-  description="Wer steckt hinter dieser Seite? Benedikts Geschichte – von der Knieverletzung zurück in den Sport. + 200 € Bonus."
-  canonical="https://benediktfau.de/knieathletics/ueber-mich/"
+  title="Über mich – Benedikt Faude | KNIEATHLETICS Erfahrungsbericht" 
+  description="Ich habe mir den Meniskus gerissen und berichte ehrlich über meine Reha mit KNIEATHLETICS. Kein Mediziner – nur ein Betroffener, der teilt, was geholfen hat."
+  canonical="https://benediktfau.de/knieathletics/ueber-mich"
   schemaType="Person"
   schemaData={schemaData}
 >
-  <div class="mb-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">Hallo, ich bin Benedikt Faude</h1>
-    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Warum ich diesen Blog gestartet habe und wer eigentlich dahinter steckt.</p>
+
+  <!-- H1 + Intro -->
+  <div class="mb-10 text-center">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">
+      Ich bin Benedikt – und ich kenne das Gefühl, mit einem kaputten Knie nicht weiterzuwissen.
+    </h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      Kein Mediziner. Kein Physio. Nur jemand, der selbst durch die Reha gegangen ist –
+      und hier ehrlich berichtet, was geholfen hat.
+    </p>
   </div>
 
-  <AuthorBox />
-
-  <article class="prose prose-blue prose-lg max-w-none text-gray-700 bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100 mt-8">
-    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-0 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Meine Verletzung & der Weg zur online Knie-Reha</h2>
-    <p>Das Internet ist leider voll von Nischenseiten, die Produkte oder Therapien empfehlen, ohne sich je ernsthaft damit auseinandergesetzt zu haben. Diese Seite hier ist anders. Ich bin Benedikt, und ich habe mir beim Sport den Meniskus gerissen.</p>
-    
-    <p>Auf der Suche nach einer vernünftigen Lösung für meine Rehabilitation fühlte ich mich in der normalen Praxis-Physio oft alleingelassen. Zweimal 20 Minuten die Woche reichten einfach nicht, und ich war unsicher, welche Übungen zu Hause sicher sind.</p>
-    
-    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-10 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Warum ich diese Seite betreibe</h2>
-    <p>Als ich schließlich das strukturierte, digitale Reha-Programm von KNIEATHLETICS durchlief und merkte, wie sehr mir das Produkt tatsächlich in meiner aktiven Genesung half, beschloss ich, diese Subpage hier auf meiner persönlichen Domain einzurichten. Echte Einblicke statt Marketing-Sprech.</p>
-    
-    <h2 class="text-3xl font-bold text-blue-bayoux-900 mt-10 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Transparenz: Das ist mein Affiliate-Modell</h2>
-    <p>Ja, diese Seite finanziert sich über ein Affiliate-Modell. Das bedeutet konkret: Wenn du über mein Formular ein gratis Erstgespräch bei KNIEATHLETICS anfragst und das KNIEATHLETICS Programm später buchst, erhalte ich als Affiliate eine Provision vom Unternehmen. <strong>Aber:</strong> Der Preis für das ca. 1.300€ teure Programm bleibt für dich exakt gleich.</p>
-    
-    <p class="font-bold text-blue-bayoux-900 mb-2">Mein 200 € Cashback-Angebot:</p>
-    <p>Da ich weiß, wie teuer so eine Reha sein kann, habe ich mich entschlossen, 200 € aus meiner Provision direkt an dich weiterzugeben. Du forderst die Beratung über diese Seite an, und wenn du das Programm buchst, überweise ich dir die 200 € als Bonus. Ich empfehle das Programm ausschließlich, weil ich es monatelang in der Reha selbst genutzt habe und zu 100% davon überzeugt bin.</p>
-    
-    <div class="bg-gray-50 border border-gray-100 p-8 rounded-2xl mt-12 flex flex-col items-center text-center">
-      <h4 class="text-xl font-bold text-blue-bayoux-900 mb-3">Du hast Fragen zu meiner Erfahrung?</h4>
-      <p class="text-base text-gray-600 mb-6 max-w-lg">Vielleicht habe ich sie bereits beantwortet. Wirf doch mal einen Blick in meinen FAQ-Bereich, dort greife ich die häufigsten Themen auf.</p>
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center mt-2">
-        <CTAButton href="/knieathletics/" text="Jetzt Gratis Erstgespräch bei KNIEATHLETICS anfragen + 200 € sichern" class="w-full sm:w-auto text-left sm:text-center leading-snug" />
-        <CTAButton href="/knieathletics/faq" text="Zum Ratgeber / FAQ" variant="outline" class="w-full sm:w-auto whitespace-nowrap" />
-      </div>
+  <!-- Foto -->
+  <div class="flex justify-center mb-12">
+    <div class="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-white shadow-xl">
+      <img
+        src="/benedikt-portrait.jpg"
+        alt="Benedikt Faude – Autor des KNIEATHLETICS Erfahrungsberichts"
+        class="w-full h-full object-cover"
+        style="object-position: 50% 25%;"
+        onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Foto'"
+        loading="eager"
+      />
     </div>
+  </div>
+
+  <!-- Artikel -->
+  <article class="max-w-3xl mx-auto space-y-10 text-gray-700 text-lg leading-relaxed">
+
+    <!-- Abschnitt 1: Die Verletzung -->
+    <section>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-4 border-l-4 border-blue-bayoux-500 pl-4">Die Verletzung</h2>
+      <p>
+        Ich habe mir beim Sport den Meniskus gerissen. Diagnose, MRT, Arztgespräch –
+        und dann stand ich da mit einem Zettel und der Empfehlung, zweimal die Woche in die Physio zu gehen.
+      </p>
+      <p class="mt-4">
+        Das Problem: Zweimal 20 Minuten pro Woche reichen schlicht nicht. Ich wusste nicht, welche Übungen
+        zuhause sicher sind. Ich hatte niemanden, den ich spontan fragen konnte. Und ich hatte das Gefühl,
+        dass niemand wirklich Zeit für mich hat.
+      </p>
+      <p class="mt-4">
+        Ich wollte aktiv werden – nicht einfach warten, bis das Knie irgendwann vielleicht besser wird.
+      </p>
+    </section>
+
+    <!-- Abschnitt 2: Der Wendepunkt -->
+    <section>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-4 border-l-4 border-blue-bayoux-500 pl-4">Der Wendepunkt</h2>
+      <p>
+        Dann bin ich auf KNIEATHLETICS gestoßen. Ich war skeptisch – Online-Reha klingt erstmal nach
+        Kompromiss. Aber das Gegenteil war der Fall.
+      </p>
+      <p class="mt-4">
+        Ich hatte einen fixen Ansprechpartner, konnte jederzeit über WhatsApp Fragen stellen und habe meine
+        Übungen überall gemacht – zuhause, im Urlaub, aus Marokko. Monatliche Messungen, wöchentliches
+        Feedback, Übungsvideos hochladen und direkte Rückmeldung bekommen. Das ist strukturierter als alles,
+        was ich vorher in der Praxis erlebt hatte.
+      </p>
+      <p class="mt-4">
+        Ich habe mich auch bewusst gegen eine Operation entschieden – nach eigener Recherche und Gesprächen
+        mit Ärzten. Die Studienlage zeigt, dass konsequentes Training nach etwa einem Jahr oft vergleichbare
+        Ergebnisse bringt wie eine OP. Als junger Mensch war mir das Arthrose-Risiko durch eine Operation
+        zu hoch.
+      </p>
+    </section>
+
+    <!-- Abschnitt 3: Warum diese Seite -->
+    <section>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-4 border-l-4 border-blue-bayoux-500 pl-4">Warum diese Seite</h2>
+      <p>
+        Weil ich mir gewünscht hätte, dass mir jemand das so erklärt hätte. Nicht ein Unternehmen –
+        sondern jemand, der das selbst gemacht hat. Diese Seite ist genau das.
+      </p>
+    </section>
+
+    <!-- Abschnitt 4: Transparenz -->
+    <section class="bg-blue-bayoux-50 border border-blue-bayoux-100 rounded-2xl p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-4">Transparenz: Affiliate-Modell</h2>
+      <p>
+        Ja, diese Seite finanziert sich über ein Affiliate-Modell. Das bedeutet: Wenn du über mein Formular
+        ein Erstgespräch anfragst und das Programm buchst, erhalte ich eine Provision von KNIEATHLETICS.
+        <strong>Der Preis für dich bleibt dabei exakt gleich</strong> – daran ändert sich nichts.
+      </p>
+      <p class="mt-4">
+        Ich empfehle das Programm, weil ich es selbst genutzt habe und überzeugt davon bin.
+        Nicht mehr und nicht weniger.
+      </p>
+    </section>
+
+    <!-- Abschnitt 5: Cashback -->
+    <section class="bg-green-50 border-2 border-green-500 rounded-2xl p-6 md:p-8">
+      <h2 class="text-2xl font-extrabold text-green-800 mb-3">💸 200 € Cashback direkt von mir</h2>
+      <p class="text-green-700">
+        Da ich weiß, wie eine Reha ins Geld gehen kann, gebe ich 200 € aus meiner Provision direkt an
+        dich weiter. Kein Gutschein, kein Trick – eine direkte Überweisung von mir, sobald du deine
+        Buchungsbestätigung vorweist.
+      </p>
+    </section>
+
+    <!-- Abschnitt 6: CTA -->
+    <section class="text-center bg-white border border-gray-100 shadow-sm rounded-2xl p-8 md:p-12">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-4">Neugierig geworden?</h2>
+      <p class="text-gray-600 mb-8 max-w-lg mx-auto">
+        Wenn dich meine Geschichte anspricht und du wissen willst, ob KNIEATHLETICS auch für dich passt –
+        das kostenlose Erstgespräch ist der richtige erste Schritt. Unverbindlich, ohne Kaufzwang.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+        <CTAButton href="/knieathletics/#erstberatung" text="Kostenlos Erstgespräch anfragen + 200 € sichern" variant="primary" class="text-sm py-3 px-5" />
+        <CTAButton href="/knieathletics/faq" text="Zum FAQ" variant="outline" class="text-sm py-3 px-5 whitespace-nowrap" />
+      </div>
+    </section>
+
   </article>
 
 </AffiliateLayout>

@@ -7,6 +7,7 @@ export interface Props {
   schemaData?: any;
 }
 const { title, description, canonical, schemaType, schemaData } = Astro.props;
+import StickyBanner from '../components/StickyBanner.astro';
 ---
 <!doctype html>
 <html lang="de" class="scroll-smooth">
@@ -20,7 +21,10 @@ const { title, description, canonical, schemaType, schemaData } = Astro.props;
       <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
     )}
 
-    <!-- Google Analytics 4 (GA4) -->
+    <!-- Noto Sans Variable (latin subset) for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=DEINE_GA4_ID"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -39,13 +43,14 @@ const { title, description, canonical, schemaType, schemaData } = Astro.props;
     </script>
   </head>
   <body class="bg-blue-bayoux-50 text-blue-bayoux-950 font-sans flex flex-col min-h-screen">
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <StickyBanner />
+    <header class="bg-white shadow-sm sticky top-10 z-50">
       <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <a href="/knieathletics/" class="font-bold text-xl text-blue-bayoux-800 tracking-tight">KNIEATHLETICS<span class="text-blue-bayoux-500 font-normal"> Erfahrungen</span></a>
         <nav class="flex gap-4 sm:gap-6 text-sm font-medium">
-          <a href="/knieathletics/erfahrungsbericht" class="hover:text-blue-bayoux-500 transition-colors">Testbericht</a>
+          <a href="/knieathletics/erfahrungsbericht" class="hover:text-blue-bayoux-500 transition-colors">Mein Erfahrungsbericht</a>
           <a href="/knieathletics/faq" class="hover:text-blue-bayoux-500 transition-colors">FAQ</a>
-          <a href="/knieathletics/ueber-mich" class="hover:text-blue-bayoux-500 transition-colors">Über Mich</a>
+          <a href="/knieathletics/ueber-mich" class="hover:text-blue-bayoux-500 transition-colors">Über mich</a>
         </nav>
       </div>
     </header>

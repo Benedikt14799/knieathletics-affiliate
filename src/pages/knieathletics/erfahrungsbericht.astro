@@ -1,98 +1,197 @@
 ---
 import AffiliateLayout from '../../layouts/AffiliateLayout.astro';
-import AuthorBox from '../../components/AuthorBox.astro';
 import LeadForm from '../../components/LeadForm.astro';
 import CTAButton from '../../components/CTAButton.astro';
 
 const schemaData = {
   "@context": "https://schema.org",
   "@type": "Review",
+  "name": "Mein Meniskusriss – Erfahrungsbericht mit KNIEATHLETICS",
+  "author": {
+    "@type": "Person",
+    "name": "Benedikt Faude",
+    "url": "https://benediktfau.de"
+  },
   "itemReviewed": {
-    "@type": "Service",
-    "name": "KNIEATHLETICS Knie-Reha Programm"
+    "@type": "Product",
+    "name": "KNIEATHLETICS – Digitales Knie-Reha-Programm",
+    "url": "https://www.knieathletics.de"
   },
   "reviewRating": {
     "@type": "Rating",
     "ratingValue": "5",
-    "bestRating": "5"
+    "bestRating": "5",
+    "worstRating": "1"
   },
-  "author": {
-    "@type": "Person",
-    "name": "Benedikt Faude"
-  },
-  "reviewBody": "Ausführlicher Erfahrungsbericht zur digitalen Spezial-Physiotherapie..."
+  "reviewBody": "Ich habe mir beim Sport den Meniskus gerissen und mich nach langer Recherche bewusst gegen eine OP entschieden. Mit KNIEATHLETICS hatte ich von Tag eins an einen strukturierten Plan, einen fixen Ansprechpartner und konnte jederzeit über WhatsApp Fragen stellen. Ich habe meine Übungen ortsunabhängig gemacht – auch im Urlaub in Marokko. Monatliche Messungen und wöchentliches Feedback haben mir gezeigt, dass ich wirklich Fortschritte mache. Für mich persönlich war das die bessere Lösung als klassische Physio.",
+  "datePublished": "2025-01-01"
 };
 ---
 
 <AffiliateLayout 
-  title="Kreuzbandriss Erfahrungsbericht | Online Reha Erfahrung 2026" 
-  description="Wie Benedikt Faude nach seinem Kreuzbandriss mit online Knie-Reha wieder voll sportlich aktiv wurde. + 200 € Cashback."
-  canonical="https://benediktfau.de/knieathletics/erfahrungsbericht/"
+  title="KNIEATHLETICS Erfahrungsbericht – Mein Meniskusriss ohne OP | Benedikt Faude" 
+  description="Ich habe mir den Meniskus gerissen und mich gegen eine OP entschieden. Hier ist mein ehrlicher Erfahrungsbericht mit dem KNIEATHLETICS-Programm – ungefiltert."
+  canonical="https://benediktfau.de/knieathletics/erfahrungsbericht"
   schemaType="Review"
   schemaData={schemaData}
 >
+
+  <!-- H1 + Intro -->
   <div class="mb-10 text-center">
     <div class="inline-flex items-center text-sm font-medium text-blue-bayoux-600 mb-3 bg-blue-bayoux-50 px-4 py-1.5 rounded-full">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       Lesezeit: ca. 8 Minuten
     </div>
-    <h1 class="text-3xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">Mein Kreuzbandriss – und wie ich ohne OP zurückgekommen bin</h1>
-    <p class="text-lg text-gray-500 font-medium">Aktualisiert: {new Intl.DateTimeFormat('de-DE').format(new Date())} | Von Benedikt Faude</p>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">
+      Mein Meniskusriss – und wie ich ohne OP wieder voll sportlich aktiv wurde
+    </h1>
+    <p class="text-lg text-gray-500 font-medium">Von Benedikt Faude &nbsp;·&nbsp; Aktualisiert: März 2026</p>
   </div>
 
-  <article class="prose prose-blue prose-lg max-w-none text-gray-700 bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 mt-0 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Die Diagnose: Was genau ist passiert?</h2>
-    <p>[Hier ausführlich die persönliche Geschichte des Meniskusrisses beschreiben. Warum reichte die normale Physio (2x20min pro Woche) nicht aus? Wie groß war die Unsicherheit zu Hause?]</p>
+  <!-- Foto -->
+  <div class="flex justify-center mb-10">
+    <div class="w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden border-4 border-white shadow-xl">
+      <img
+        src="/benedikt-portrait.jpg"
+        alt="Benedikt Faude – Autor des KNIEATHLETICS Erfahrungsberichts"
+        class="w-full h-full object-cover"
+        style="object-position: 50% 25%;"
+        onerror="this.src='https://placehold.co/400x400/e2e8f0/64748b?text=Foto'"
+        loading="eager"
+      />
+    </div>
+  </div>
 
-    <!-- Platzhalter für Bilder -->
-    <div class="bg-gray-50 w-full h-64 rounded-xl flex flex-col items-center justify-center my-10 border-2 border-dashed border-gray-300">
-      <svg class="w-12 h-12 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-      <span class="text-gray-500 font-medium tracking-wide">(Platzhalter für Home-Workout / Reha-Foto)</span>
+  <!-- Intro-Text -->
+  <p class="text-xl text-gray-500 max-w-2xl mx-auto text-center mb-12 leading-relaxed">
+    Ich bin kein Arzt und kein Physiotherapeut. Ich bin jemand, der sich beim Sport den Meniskus gerissen hat
+    und einen langen Weg zurück gesucht hat. Hier ist mein ehrlicher Erfahrungsbericht – ungefiltert.
+  </p>
+
+  <!-- Artikel -->
+  <article class="max-w-3xl mx-auto space-y-12 text-gray-700 text-lg leading-relaxed">
+
+    <!-- Abschnitt 1: Die Diagnose -->
+    <section class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-5 border-l-4 border-blue-bayoux-500 pl-4">Die Diagnose</h2>
+      <p>
+        Es hat beim Sport geknackst – und danach war nichts mehr wie vorher. Nach MRT und Arztgespräch
+        stand fest: Meniskusriss. Die Empfehlung: zweimal die Woche Physio, abwarten, Schmerzmittel wenn nötig.
+      </p>
+      <p class="mt-4">
+        Ich war frustriert. Nicht wegen der Diagnose – sondern wegen des Gefühls, keinen echten Plan zu haben.
+        Zweimal 20 Minuten pro Woche, jedes Mal ein anderer Therapeut, keine klare Aussage dazu, was ich
+        zuhause tun soll und was nicht.
+      </p>
+    </section>
+
+    <!-- Abschnitt 2: Klassische Physio -->
+    <section class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-5 border-l-4 border-blue-bayoux-500 pl-4">Klassische Physio: Was nicht funktioniert hat</h2>
+      <p>
+        Die Praxis war gut – aber das System ist es nicht. Ich hatte keine Kontinuität. Keine Möglichkeit,
+        spontan zu fragen ob eine Übung so stimmt. Und wenn ich zuhause unsicher war, war ich auf mich
+        allein gestellt.
+      </p>
+      <p class="mt-4">
+        Ich wollte aktiv etwas tun. Nicht passiv auf Besserung warten.
+      </p>
+    </section>
+
+    <!-- Mid-CTA -->
+    <div class="flex justify-center">
+      <CTAButton href="/knieathletics/#erstberatung" text="Gratis Erstgespräch anfragen + 200 € Cashback sichern" />
     </div>
 
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Klassische Physio: Wartezeiten, Frust, keine Fortschritte</h2>
-    <p>[Warum war ich bereit, ~1.300€ aus eigener Tasche für ein Reha-Programm zu zahlen? Was war das Versprechen der remote Betreuung im Vergleich zur Standard-Kasse?]</p>
+    <!-- Abschnitt 3: KNIEATHLETICS gefunden -->
+    <section class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-5 border-l-4 border-blue-bayoux-500 pl-4">Wie ich KNIEATHLETICS gefunden habe</h2>
+      <p>
+        Ich habe recherchiert – viel. Irgendwann bin ich auf KNIEATHLETICS gestoßen. Ein digitales
+        Reha-Programm, spezialisiert auf Knie. Ich war skeptisch, ob das online wirklich funktionieren kann.
+        Aber ich habe das Erstgespräch gemacht – und war direkt positiv überrascht von der Qualität
+        der Einschätzung.
+      </p>
+    </section>
 
-    <div class="flex justify-center my-10">
-      <CTAButton href="/knieathletics/#erstberatung" text="Jetzt Gratis Erstgespräch bei KNIEATHLETICS anfragen + 200 € Cashback sichern" />
-    </div>
+    <!-- Abschnitt 4: Die ersten Wochen -->
+    <section class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-5 border-l-4 border-blue-bayoux-500 pl-4">Die ersten Wochen im Programm</h2>
+      <p>
+        Von Tag eins an hatte ich Klarheit. Ein strukturierter Plan, ein fixer Ansprechpartner, Kontakt
+        über WhatsApp. Ich konnte jederzeit Fragen stellen – und habe immer eine schnelle, konkrete
+        Antwort bekommen.
+      </p>
+      <p class="mt-4">
+        Ich habe meine Übungen überall gemacht. Zuhause, im Hotel, einmal sogar im Urlaub in Marokko.
+        Das war für mich ein echter Gamechanger – weil ich ohnehin viel unterwegs bin.
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Wie ich KNIEATHLETICS gefunden habe</h2>
-    <p>[Wie läuft der Alltag ab? App-Nutzung, Videoanalysen, täglicher Kontakt mit den Trainern/Physios. Wie sicher fühlte man sich beim Ausführen der Übungen?]</p>
+    <!-- Abschnitt 5: Heute -->
+    <section class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-5 border-l-4 border-blue-bayoux-500 pl-4">Heute</h2>
+      <p>
+        Ich bin wieder voll sportlich aktiv. Das Knie hält. Ich habe mich bewusst gegen eine Operation
+        entschieden – nach Gesprächen mit Ärzten und eigener Recherche zur Studienlage. Konsequentes
+        Training über ein Jahr kann in vielen Fällen vergleichbare Ergebnisse bringen. Für mich war
+        das die richtige Entscheidung.
+      </p>
+    </section>
 
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Die ersten Wochen im Programm</h2>
-    <p>[Erste Eindrücke, Struktur des Plans.]</p>
-
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Heute: Wieder voll sportlich aktiv</h2>
-    <p>[Ergebnis der monatelangen Arbeit.]</p>
-
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 pt-2 border-t-4 border-blue-bayoux-500 inline-block">Vor- und Nachteile (Mein Fazit)</h2>
-    <div class="flex flex-col md:flex-row gap-6 my-8">
-      <div class="flex-1 bg-green-50 p-6 sm:p-8 rounded-2xl border border-green-100 shadow-sm">
-        <h3 class="text-green-800 font-bold mt-0 flex items-center text-xl"><span class="text-2xl mr-3">👍</span> Vorteile</h3>
-        <ul class="text-green-900 font-medium mb-0 list-none pl-0 space-y-3">
-          <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Jeden Tag 100% Klarheit, was man tun muss</li>
-          <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Exzellenter, direkter Chat-Support mit Knie-Spezialisten</li>
-          <li class="flex items-start"><svg class="w-5 h-5 text-green-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Schnellerer und sichererer Muskelaufbau</li>
-        </ul>
+    <!-- Vor-/Nachteile -->
+    <section>
+      <h2 class="text-2xl md:text-3xl font-extrabold text-blue-bayoux-900 mb-6 text-center">Mein ehrliches Fazit</h2>
+      <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-1 bg-green-50 p-6 md:p-8 rounded-2xl border border-green-100 shadow-sm">
+          <h3 class="text-green-800 font-bold mt-0 flex items-center text-xl mb-4"><span class="text-2xl mr-3">👍</span> Vorteile</h3>
+          <ul class="text-green-900 font-medium mb-0 list-none pl-0 space-y-3">
+            {[
+              "Jeden Tag 100% Klarheit, was zu tun ist",
+              "Fixer Ansprechpartner – kein anonymes Support-System",
+              "Jederzeit erreichbar über WhatsApp, egal wo ich bin",
+              "Monatliche Messungen zeigen echten Fortschritt",
+              "Funktioniert ortsunabhängig – auch im Urlaub"
+            ].map(item => (
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex-1 bg-red-50 p-6 md:p-8 rounded-2xl border border-red-100 shadow-sm">
+          <h3 class="text-red-800 font-bold mt-0 flex items-center text-xl mb-4"><span class="text-2xl mr-3">👎</span> Nachteile</h3>
+          <ul class="text-red-900 font-medium mb-0 list-none pl-0 space-y-3">
+            {[
+              "Erfordert echte Eigenmotivation – wer nicht diszipliniert trainiert, wird nicht profitieren",
+              "Für Menschen, die persönlichen Körperkontakt in der Therapie brauchen, kein Ersatz für die Praxis"
+            ].map(item => (
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-red-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-      <div class="flex-1 bg-red-50 p-6 sm:p-8 rounded-2xl border border-red-100 shadow-sm">
-        <h3 class="text-red-800 font-bold mt-0 flex items-center text-xl"><span class="text-2xl mr-3">👎</span> Nachteile</h3>
-        <ul class="text-red-900 font-medium mb-0 list-none pl-0 space-y-3">
-          <li class="flex items-start"><svg class="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Hochpreisig (ca. 1.300€ Eigenleistung)</li>
-          <li class="flex items-start"><svg class="w-5 h-5 text-red-600 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>Erfordert hohe Eigenmotivation und Disziplin</li>
-        </ul>
-      </div>
-    </div>
+    </section>
 
-    <hr class="my-10 border-blue-bayoux-100" />
-    
-    <h2 class="text-2xl font-bold text-blue-bayoux-900 mb-4 inline-flex items-center"><span class="text-3xl mr-3">🎁</span> Mein Bonus an dich: 200 € Cashback</h2>
-    <p class="text-lg">Weil ich selbst weiß, wie hoch die finanzielle Belastung sein kann, gebe ich einen Teil meiner Affiliate-Provision an dich weiter. Wenn du über diese Seite anfragst und das Programm startest, wandern 200 € von mir an dich zurück.</p>
+    <!-- Cashback -->
+    <section class="bg-green-50 border-2 border-green-500 rounded-2xl p-6 md:p-8">
+      <h2 class="text-2xl font-extrabold text-green-800 mb-3">💸 200 € Cashback – direkt von mir</h2>
+      <p class="text-green-700">
+        Weil ich selbst weiß, wie hoch die finanzielle Belastung sein kann, gebe ich 200 € aus meiner
+        Affiliate-Provision direkt an dich weiter. Kein Gutschein, keine versteckten Bedingungen –
+        eine direkte Überweisung von mir, sobald du deine Buchungsbestätigung vorweist.
+      </p>
+    </section>
+
   </article>
 
-  <LeadForm />
-
-  <AuthorBox />
+  <!-- Lead Form -->
+  <div class="max-w-3xl mx-auto mt-12" id="erstberatung">
+    <LeadForm />
+  </div>
 
 </AffiliateLayout>

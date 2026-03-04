@@ -1,0 +1,45 @@
+---
+---
+<div id="live-notification" class="fixed bottom-6 left-4 z-50 max-w-xs bg-white border border-gray-200 rounded-xl shadow-xl p-4 flex items-center gap-3 opacity-0 translate-y-4 transition-all duration-500 pointer-events-none">
+  <div class="w-10 h-10 bg-blue-bayoux-100 rounded-full flex items-center justify-center flex-shrink-0 text-xl">👤</div>
+  <div>
+    <p class="font-bold text-blue-bayoux-900 text-sm" id="notif-name">Jonas aus München</p>
+    <p class="text-gray-500 text-xs">hat gerade das Erstgespräch angefragt</p>
+    <p class="text-gray-400 text-[11px] mt-0.5" id="notif-time">vor 2 Minuten</p>
+  </div>
+  <button onclick="document.getElementById('live-notification').classList.add('opacity-0','pointer-events-none')" class="absolute top-2 right-2 text-gray-300 hover:text-gray-500 text-lg leading-none">✕</button>
+</div>
+
+<script is:inline>
+  (function() {
+    // Nur einmal pro Session anzeigen
+    if (sessionStorage.getItem('notif_shown')) return;
+
+    const entries = [
+      { name: "Jonas aus München", time: "vor 2 Stunden" },
+      { name: "Sarah aus Berlin", time: "vor 4 Stunden" },
+      { name: "Markus aus Hamburg", time: "vor 6 Stunden" },
+      { name: "Laura aus Wien", time: "vor 3 Stunden" },
+      { name: "Florian aus Köln", time: "vor 8 Stunden" },
+    ];
+
+    const entry = entries[Math.floor(Math.random() * entries.length)];
+
+    setTimeout(function() {
+      const el = document.getElementById('live-notification');
+      if (!el) return;
+      document.getElementById('notif-name').textContent = entry.name;
+      document.getElementById('notif-time').textContent = entry.time;
+
+      el.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      el.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+
+      sessionStorage.setItem('notif_shown', '1');
+
+      setTimeout(function() {
+        el.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+        el.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+      }, 6000);
+    }, 4000);
+  })();
+</script>

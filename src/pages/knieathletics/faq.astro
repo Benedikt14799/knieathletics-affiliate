@@ -3,58 +3,85 @@ import AffiliateLayout from '../../layouts/AffiliateLayout.astro';
 import CTAButton from '../../components/CTAButton.astro';
 
 const faqs = [
-  { question: "Kann ich Knie-Reha wirklich online machen?", answer: "Ja, in den meisten Fällen sogar sehr gut. Da du Übungsvideos hochlädst und der Plan detailliert in der App steht, ist das Training oft präziser als wenn du nur 2x die Woche für 20 Minuten in die Praxis gehst." },
-  { question: "Was ist KNIEATHLETICS und für wen ist es geeignet?", answer: "Es ist ein digitales Physiotherapie- und Reha-Programm. Es richtet sich primär an Menschen mit Meniskusriss, Kreuzbandriss oder chronischen Knieschmerzen, die strukturiert in den Sport zurückkehren möchten." },
-  { question: "Wie lange dauert eine Kreuzbandriss-Reha?", answer: "Eine vollständige Rehabilitation nach einem Kreuzbandriss dauert oft 9 bis 12 Monate. Das Programm begleitet dich auf diesem langen Weg und steuert die Belastung Woche für Woche." },
-  { question: "Kreuzbandriss ohne Operation – ist das möglich?", answer: "Ja, die konservative Behandlung wird immer häufiger erfolgreich angewandt. Genau dafür bietet das Programm spezialisierte Trainingspläne, um das Knie muskulär zu stabilisieren." },
-  { question: "Was kostet ein digitales Physiotherapie-Programm?", answer: "Da du über Monate hinweg 1-zu-1 digital von Knie-Spezialisten betreut wirst, liegt das Programm im Premium-Segment bei ca. 1.300 €. Es ist eine Investition in deine langfristige Kniegesundheit." },
-  { question: "Meniskusriss: Wann brauche ich eine OP?", answer: "Oft kann ein Meniskusriss auch konservativ heilen. Ob eine OP zwingend nötig ist, hängt von Rissart und Blockaden ab – das kann in der kostenlosen Erstberatung oder durch deinen Arzt geklärt werden." },
-  { question: "Online Reha vs. klassische Physio – was ist besser?", answer: "Die Kombination macht's! Für manuelle Therapie brauchst du die Praxis. Aber für den langfristigen, gezielten Muskelaufbau ist ein strukturierter App-Plan mit täglichem Chat-Support oft überlegen." },
+  { question: "Kann ich Knie-Reha wirklich online machen?", answer: "Ja – und aus meiner Erfahrung sogar besser als klassische Physio. Du bist komplett ortsunabhängig, kannst deine Übungen von überall machen und hast über WhatsApp jederzeit Zugang zu deinem Therapeuten. Ich konnte immer Fragen stellen – egal wann. Das ist ein riesiger Unterschied zu zweimal die Woche für 20 Minuten in die Praxis zu gehen." },
+  { question: "Was ist KNIEATHLETICS und für wen ist es geeignet?", answer: "Es ist ein digitales Physiotherapie- und Reha-Programm für Menschen mit Meniskusriss, Kreuzbandriss oder chronischen Knieschmerzen. Wichtig: Das Programm setzt voraus, dass du wirklich trainieren willst. Wer Initiative zeigt, diszipliniert ist und bereit ist, sich einen zeitlichen Rahmen zu schaffen – für den ist es ideal. Es ist kein passives Programm." },
+  { question: "Wie lange dauert eine Kreuzbandriss-Reha?", answer: "Dazu kann ich aus eigener Erfahrung nichts sagen – ich bin Meniskusriss-Patient. Von anderen Teilnehmern, die ich im Programm kennengelernt habe, habe ich mitbekommen, dass eine vollständige Kreuzband-Reha oft zwischen 9 und 12 Monaten dauert. Das Programm begleitet dich auf diesem Weg und steuert die Belastung Woche für Woche." },
+  { question: "Kreuzbandriss oder Meniskusriss ohne OP – ist das möglich?", answer: "Ja, in vielen Fällen schon. Die Studienlage zeigt, dass nach einem Jahr konsequentem, stringentem Training oft kein messbarer Unterschied zu einer operierten Behandlung erkennbar ist. Ich selbst habe mich als junger Mensch bewusst gegen eine OP entschieden – auch um das Arthrose-Risiko langfristig gering zu halten. KNIEATHLETICS unterstützt diesen Weg mit individuellen Trainingsplänen, gezielten Tests und regelmäßigem Feedback." },
+  { question: "Was kostet das KNIEATHLETICS-Programm?", answer: "Das lässt sich pauschal nicht beantworten – der Preis ist sehr individuell und hängt von deiner Ausgangslage ab. Im Erstgespräch bekommst du ein konkretes Angebot, das auf deine Verletzung und Situation zugeschnitten ist." },
+  { question: "Meniskusriss: Wann brauche ich eine OP?", answer: "Das kann ich nur aus meiner eigenen Perspektive beantworten: Ich habe mich nach Rücksprache mit Ärzten gegen eine OP entschieden. Die Studienlage, die ich recherchiert habe, zeigt, dass nach einem Jahr konsequentem Training häufig kein Unterschied zur operierten Variante erkennbar ist. Da ich jung bin und das Arthrose-Risiko möglichst gering halten wollte, war das für mich die richtige Entscheidung. Ob das für dich gilt, klärt das kostenlose Erstgespräch." },
+  { question: "Online Reha vs. klassische Physio – was ist besser?", answer: "Für mich persönlich: Online. Ich arbeite ohnehin ortsunabhängig und kann meine Übungen von überall machen – ich habe sie schon aus Marokko im Urlaub gemacht. Für manuell-therapeutische Einheiten brauchst du die Praxis, das stimmt. Aber für den strukturierten, langfristigen Wiederaufbau war KNIEATHLETICS für mich die bessere Lösung." },
   { question: "Gibt es einen besonderen Bonus, wenn ich über dich buche?", answer: "Ja – und zwar einen echten: Wenn du das KNIEATHLETICS-Programm über meine Seite anfragst und buchst, erstatte ich dir persönlich 200 € zurück. Das ist kein Gutscheincode, kein Marketing-Trick – sondern eine direkte Überweisung von mir an dich, sobald du deine Buchungsbestätigung von KNIEATHLETICS vorzeigst. Ich erhalte als Affiliate eine Provision – einen Teil davon gebe ich einfach weiter." },
-  { question: "Was passiert nach dem gratis Erstgespräch bei KNIEATHLETICS?", answer: "Ganz einfach: Du entscheidest in Ruhe, ob das Konzept zu dir und deiner Verletzung passt. Es gibt keinen Kaufzwang." },
-  { question: "Für wen ist KNIEATHLETICS NICHT geeignet?", answer: "Für Patienten, die nicht gewillt sind, eigenständig zu trainieren. Die App gibt den Rahmen, aber machen musst du die Übungen selbst." },
-  { question: "Wie schnell spüre ich erste Fortschritte?", answer: "Durch die engmaschige Belastungssteuerung spüren viele Teilnehmer bereits in den ersten 2-4 Wochen eine deutliche Reduzierung der Schwellung und mehr Sicherheit im Alltag." }
+  { question: "Was passiert nach dem Gratis-Erstgespräch?", answer: "Im Erstgespräch analysiert ein Knie-Spezialist deine Verletzung und Ausgangslage. Danach bekommst du ein individuelles Angebot mit konkretem Behandlungsplan. Wenn du über meine Seite buchst, erhältst du zusätzlich 200 € Cashback – direkt von mir überwiesen nach Vorlage der Buchungsbestätigung." },
+  { question: "Für wen ist KNIEATHLETICS nicht geeignet?", answer: "Ganz ehrlich: Für Menschen, die nicht bereit sind, sich wirklich reinzuhängen. Am Anfang solltest du mindestens 5 Stunden pro Woche einplanen. Wer nicht diszipliniert und selbstständig trainieren will, wird mit dem Programm nicht glücklich. Es braucht Eigeninitiative – dann funktioniert es aber sehr gut." },
+  { question: "Wie läuft das KNIEATHLETICS-Programm konkret ab?", answer: "Du bekommst einen fixen Ansprechpartner, der dich durch das gesamte Programm begleitet. Der Kontakt läuft über WhatsApp – du lädst Übungsvideos hoch, bekommst direktes Feedback. Es gibt monatliche Messungen, um deinen Fortschritt zu dokumentieren, sowie wöchentliche und monatliche Feedbacks. Die Betreuung ist sehr individuell – kein Standard-Plan von der Stange." },
+  { question: "Kann ich das Programm auch nach einer Knie-OP machen?", answer: "Ja, viele Teilnehmer starten KNIEATHLETICS in der Reha-Phase nach einer OP. Der Plan wird individuell angepasst – das kostenlose Erstgespräch klärt, ab wann der Einstieg sinnvoll ist." },
+  { question: "Wie schnell spüre ich erste Fortschritte?", answer: "Durch die engmaschige Belastungssteuerung spüren viele Teilnehmer bereits in den ersten 2–4 Wochen eine deutliche Reduzierung der Schwellung und mehr Sicherheit im Alltag." },
+  { question: "Ist KNIEATHLETICS von Krankenkassen anerkannt?", answer: "Das Programm ist kein klassischer Kassenleistungsanbieter. Es richtet sich an Menschen, die schneller und gezielter vorankommen wollen als mit dem Standard-Physiotherapie-System." }
 ];
 
 const schemaData = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
-    "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": faq.answer
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+      }))
+    },
+    {
+      "@type": "Offer",
+      "name": "200 € Cashback bei Buchung über Benedikt Faude",
+      "price": "200",
+      "priceCurrency": "EUR",
+      "seller": { "@type": "Person", "name": "Benedikt Faude" }
+    },
+    {
+      "@type": "Person",
+      "name": "Benedikt Faude",
+      "url": "https://benediktfau.de"
     }
-  }))
+  ]
 };
 ---
 
 <AffiliateLayout 
-  title="FAQ: Online Knie-Reha | Kreuzbandriss & Meniskusriss Fragen" 
-  description="Alle Antworten zu digitaler Physiotherapie, Kosten, Dauer und 200 € Cashback-Angebot. Knie-Reha online."
-  canonical="https://benediktfau.de/knieathletics/faq/"
+  title="KNIEATHLETICS FAQ – Erfahrungen, Kosten & Ablauf erklärt" 
+  description="Häufige Fragen zu KNIEATHLETICS: Kreuzbandriss, Meniskus, Kosten, Ablauf – beantwortet aus meiner eigenen Erfahrung. + 200 € Cashback."
+  canonical="https://benediktfau.de/knieathletics/faq"
   schemaType="FAQPage"
   schemaData={schemaData}
 >
   <div class="mb-12 text-center">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">Häufige Fragen zur online Knie-Reha</h1>
-    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Die wichtigsten Fragen zum digitalen KNIEATHLETICS Physiotherapie-Programm, beantwortet aus meiner eigenen Erfahrung.</p>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-bayoux-950 mb-4 tracking-tight leading-tight">KNIEATHLETICS FAQ – Häufige Fragen aus meiner Erfahrung</h1>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Ich beantworte hier die Fragen, die ich mir vor dem Start selbst gestellt habe – rund um Kreuzbandriss, Meniskus, Kosten und wie das Programm wirklich abläuft.</p>
   </div>
 
   <div class="bg-white px-6 py-2 md:p-10 rounded-2xl shadow-sm border border-gray-100 mb-12">
     <div class="space-y-6 md:space-y-8 divide-y divide-gray-100">
       {faqs.map((faq, index) => (
-        <div class="pt-6 md:pt-8 first:pt-4">
-          <h2 class="text-xl font-bold text-blue-bayoux-900 mb-3 flex items-start">
-            <span class="text-blue-bayoux-400 mr-3 mt-0.5">Q.</span>
-            {faq.question}
-          </h2>
-          <p class="text-gray-700 leading-relaxed pl-8 md:pl-10">
-            <span class="font-bold text-blue-bayoux-800 absolute -ml-8">A.</span>
-            {faq.answer}
-          </p>
-        </div>
+        <>
+          <div class="pt-6 md:pt-8 first:pt-4">
+            <h2 class="text-xl font-bold text-blue-bayoux-900 mb-3 flex items-start">
+              <span class="text-blue-bayoux-400 mr-3 mt-0.5">Q.</span>
+              {faq.question}
+            </h2>
+            <p class="text-gray-700 leading-relaxed pl-8 md:pl-10">
+              <span class="font-bold text-blue-bayoux-800 absolute -ml-8">A.</span>
+              {faq.answer}
+            </p>
+          </div>
+          {index === 6 && (
+            <div class="my-8 pt-8 text-center">
+              <CTAButton
+                href="/knieathletics/#erstberatung"
+                text="Gratis Erstgespräch anfragen + 200 € sichern"
+                variant="outline"
+              />
+            </div>
+          )}
+        </>
       ))}
     </div>
   </div>
@@ -62,9 +89,9 @@ const schemaData = {
   <div class="text-center bg-blue-bayoux-50 p-8 md:p-12 rounded-2xl border border-blue-bayoux-100 mb-10 overflow-hidden relative">
     <div class="absolute top-0 right-0 w-32 h-32 bg-blue-bayoux-100 rounded-bl-full -z-0 opacity-50"></div>
     <div class="relative z-10">
-      <h2 class="text-2xl md:text-3xl font-bold text-blue-bayoux-900 mb-4">Noch unsicher?</h2>
-      <p class="text-gray-700 mb-8 max-w-xl mx-auto text-lg leading-relaxed">Sichere dir das gratis Erstgespräch bei KNIEATHLETICS und schnapp dir nach Buchung über meine Seite den 200 € Cashback.</p>
-      <CTAButton href="/knieathletics/" text="Jetzt Gratis Erstgespräch bei KNIEATHLETICS anfragen + 200 € Cashback sichern" />
+      <h2 class="text-2xl md:text-3xl font-bold text-blue-bayoux-900 mb-4">Noch Fragen? Das Erstgespräch ist kostenlos.</h2>
+      <p class="text-gray-700 mb-8 max-w-xl mx-auto text-lg leading-relaxed">Finde in 15 Minuten heraus, ob KNIEATHLETICS zu deiner Verletzung passt – ohne Kaufzwang.</p>
+      <CTAButton href="/knieathletics/#erstberatung" text="Jetzt Gratis Erstgespräch bei KNIEATHLETICS anfragen + 200 € Cashback sichern" />
     </div>
   </div>
 
